@@ -1,6 +1,4 @@
 import Link from "next/link";
-import React from "react";
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,8 +7,17 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
+import { Switch } from "@/components/ui/switch"
+import { Button } from "./ui/button";
+import MobileMenu from "./MobileMenu";
+
+
+
 
 const Navbar = () => {
+
+
+
   return (
     <header className="py-4 bg-white text-gray-900 transition-colors shadow-md duration-300 ">
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
@@ -78,7 +85,17 @@ const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        
+        {/* color switcher and login */}
+        <div className="hidden lg:flex md:flex items-center space-x-4 ">
+          <div className="flex items-center">
+            <span className="mr-2">Dark Mode</span>
+            <Switch />
+          </div>
+          <Button variant="default">Login</Button>
+        </div>
+
+        {/* hamburger menu */}
+        <MobileMenu />
       </nav>
     </header>
   );
