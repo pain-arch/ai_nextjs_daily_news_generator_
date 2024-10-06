@@ -13,7 +13,7 @@ const MobileMenu = () => {
   
 
   return (
-    <div className="hidden">
+    <div className="lg:hidden md:hidden">
           <Button onClick={toggleMobileMenu}>
             {
                isMobileMenuOpen ? (<AiOutlineClose size={24} className=""/>) : (<AiOutlineMenu size={24} className=""/>)

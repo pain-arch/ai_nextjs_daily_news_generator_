@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import {
   NavigationMenu,
@@ -10,13 +12,14 @@ import {
 import { Switch } from "@/components/ui/switch"
 import { Button } from "./ui/button";
 import MobileMenu from "./MobileMenu";
+import { usePathname } from "next/navigation";
 
 
 
 
 const Navbar = () => {
 
-
+  const pathName = usePathname();
 
   return (
     <header className="py-4 bg-white text-gray-900 transition-colors shadow-md duration-300 ">
@@ -28,9 +31,10 @@ const Navbar = () => {
 
         {/* Navigation */}
         <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList>
+          <NavigationMenuList  className="flex space-x-8 ">
+            
             <NavigationMenuItem>
-              <NavigationMenuLink href="/news" className="hover: text-gray-600">
+              <NavigationMenuLink href="/news" className={`link ${pathName === '/news' ? 'text-[#4eff2f] ' : ''} hover:text-gray-600`}>
                 News
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -73,15 +77,17 @@ const Navbar = () => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuLink href="/about" className="hover: text-gray-600">
+              <NavigationMenuLink href="/about" className={`link ${pathName === '/about' ? 'text-[#4eff2f]' : ''} hover: text-gray-600 `}>
                 About
               </NavigationMenuLink>
             </NavigationMenuItem>
+
             <NavigationMenuItem>
-              <NavigationMenuLink href="/contact" className="hover: text-gray-600">
+              <NavigationMenuLink href="/contact" className={`link ${pathName === '/contact' ? 'text-[#4eff2f]' : ''} hover: text-gray-600 `}>
                 Contact
               </NavigationMenuLink>
             </NavigationMenuItem>
+
           </NavigationMenuList>
         </NavigationMenu>
 
