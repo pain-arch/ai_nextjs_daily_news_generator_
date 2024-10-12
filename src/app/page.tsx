@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import Newscard from "@/components/Newscard";
+import NewsLetter from "@/components/Newsletter";
 import { NewsItem } from "@/types/news";
 
 export default async function Home() {
@@ -20,6 +21,8 @@ export default async function Home() {
           ))}
         </div>
       </div>
+
+      <NewsLetter />
     </div>
   );
 }
