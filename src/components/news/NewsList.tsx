@@ -21,8 +21,8 @@ const NewsList = () => {
   }, [category, search]);
 
   return (
-    <div className="">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-12 mb-5">
+    
+      <div className="">
         {/* Search bar */}
         <SearchBar onSearch={setSearch} />
 
@@ -30,13 +30,13 @@ const NewsList = () => {
         <CategoryFilter onCategoryChange={setCategory} />
 
         {/* present news */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-between">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-between my-4">
           {news.map((item: NewsItem) => (
             <Newscard key={item?._id} item={item} />
           ))}
         </div>
       </div>
-    </div>
+  
   );
 };
 
