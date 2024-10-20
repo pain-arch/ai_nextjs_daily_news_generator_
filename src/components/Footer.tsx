@@ -61,7 +61,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-8 text-center md:flex md:justify-between md:items-center">
           <p className="text-gray-600 dark:text-gray-400">
-            &copy; 2024 YourCompany. All rights reserved.
+            &copy; 2024 Daily News Portal. All rights reserved.
           </p>
 
           <Button variant="outline" className="mt-4 md:mt-0 dark:bg-gray-900 dark:text-white">
